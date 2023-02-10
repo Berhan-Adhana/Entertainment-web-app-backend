@@ -5,6 +5,9 @@
   "scripts": {
     "start": "nodemon ./bin/www"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@tanstack/react-query-devtools": "^4.22.0",
     "bcryptjs": "^2.4.3",
