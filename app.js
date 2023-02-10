@@ -6,6 +6,9 @@ require("dotenv").config();
 
 require("./app/startup/db")();
 require("./app/startup/routes")(app);
+app.get("/", (req, res) => {
+  res.status(200).send({ message: "hello" });
+});
 
 //database connetion  ://berhan:<password>@cluster0.zabguzd.mongodb.net/test
 
