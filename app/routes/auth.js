@@ -2,6 +2,7 @@ const _ = require("lodash");
 const addHeaders = require("../middlewares/addHeaders");
 const router = require("express").Router();
 const { User } = require("../models/user");
+
 router.get("/", (req, res) => {
   return res.status(200).json({ message: "yeah works." });
 });
