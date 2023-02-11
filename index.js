@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 /* GET users listing. */
-app.get("/api/users/all-users", async (req, res) => {
+app.get("/users/all-users", async (req, res) => {
   const users = await User.find();
   res.status(200).send(users);
 });
