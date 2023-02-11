@@ -1,5 +1,6 @@
 var express = require("express");
 const moviesData = require("./app/data");
+const { User } = require("./app/models/user");
 var app = express();
 require("dotenv").config();
 // require("express-async-errors");
@@ -7,6 +8,13 @@ require("dotenv").config();
 app.get("/", (req, res) => {
   res.status(200).send({ message: "hello" });
 });
+
+/* GET users listing. */
+app.get("/api/users/all-users", async (req, res) => {
+  const users = await User.find();
+  res.status(200).send(users);
+});
+
 require("./app/startup/db")();
 require("./app/startup/routes")(app);
 
