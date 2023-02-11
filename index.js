@@ -4,11 +4,15 @@ var app = express();
 require("dotenv").config();
 // require("express-async-errors");
 
-require("./app/startup/db")();
-require("./app/startup/routes")(app);
 app.get("/", (req, res) => {
   res.status(200).send({ message: "hello" });
 });
+require("./app/startup/db")();
+require("./app/startup/routes")(app);
+
+// app.get("/", (req, res) => {
+//   res.status(200).send({ message: "hello" });
+// });
 
 //database connetion  ://berhan:<password>@cluster0.zabguzd.mongodb.net/test
 
