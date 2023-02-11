@@ -14,6 +14,6 @@ module.exports = function (app) {
   app.use("/api/auth", auth);
   app.use("/api/movies", movie);
   app.use("/api/users", user);
-  // app.use(notFound);
-  // app.use(errorHandler);
+  app.use(notFound);
+  app.use(errorHandler);
 };
