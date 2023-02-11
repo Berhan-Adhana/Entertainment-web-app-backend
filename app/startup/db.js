@@ -3,7 +3,8 @@ module.exports = function () {
   mongoose.set("strictQuery", true);
   mongoose
     .connect(
-      `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@cluster0.zabguzd.mongodb.net/user`,
+      // `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@cluster0.zabguzd.mongodb.net/user`,
+      "mongodb+srv://berhan:root@cluster0.zabguzd.mongodb.net/user",
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
