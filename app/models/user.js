@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
 const jwt = require("jsonwebtoken");
-const config = require("../config/auth.config");
 const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema(
@@ -50,7 +49,7 @@ const userSchema = new mongoose.Schema(
         return bcrypt.compareSync(enteredPassword, this.password);
       },
       generateAuthToken() {
-        const token = jwt.sign({ id: this._id }, config.secret, {
+        const token = jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
           expiresIn: 86400,
         });
         return token;
