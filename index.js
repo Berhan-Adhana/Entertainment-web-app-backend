@@ -1,6 +1,5 @@
 var express = require("express");
 const moviesData = require("./app/data");
-const { User } = require("./app/models/user");
 var app = express();
 require("dotenv").config();
 // require("express-async-errors");
